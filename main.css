@@ -1,8 +1,48 @@
-h1 {
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    background-color: #1a1a1a;
     color: white;
 }
 
-.contactHeader {
-    background-color: grey;
+tr:nth-child(odd) {
+    background-color: #1e1e1e;
+}
+
+td {
+    padding: 10px;
+    margin: 0px;
+}
+
+select {
+    margin: 15px;
+}
+
+.contactDetail {
+    border-left-style: solid;
+    border-left-color: black;
+    border-left-width: thin;
+    color: #4d4d4d;
+}
+
+.dot {
+    height: 9px;
+    width: 9px;
+    margin: 0px 10px 0px 10px;
+    background-color: #00fe1c;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#contactHeader {
+    background-color: #2e2e2e;
     color: white;
+    padding: 25px 50px 25px 50px;
+}
+
+#footer {
+    background-color: #2e2e2e;
 }
