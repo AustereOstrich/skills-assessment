@@ -27,6 +27,7 @@ a {
 }
 
 .contactDetail {
+    width: 60%;
     border-left-style: solid;
     border-left-color: black;
     border-left-width: thin;
@@ -37,7 +38,25 @@ a {
     height: 9px;
     width: 9px;
     margin: 0px 10px 0px 10px;
-    background-color: #00fe1c;
+    background-color: greenyellow;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.yellowDot {
+    height: 9px;
+    width: 9px;
+    margin: 0px 10px 0px 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.redDot {
+    height: 9px;
+    width: 9px;
+    margin: 0px 10px 0px 10px;
+    background-color: red;
     border-radius: 50%;
     display: inline-block;
 }
@@ -53,9 +72,11 @@ tr.selected td {
 #contactHeader {
     background-color: #2e2e2e;
     color: white;
-    padding: 25px 50px 25px 50px;
+    padding: 25px 50px 25px 25px;
+    font-size: larger;
 }
 
 #footer {
     background-color: #2e2e2e;
+    text-align: right;
 }
