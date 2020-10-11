@@ -106,12 +106,22 @@
     function showFullDetail(e) {
         clearSelection();
         e.classList.add("selected");
-        console.log(e.childNodes.forEach(child => console.log(child.innerHTML)));
-        e.childNodes[3].innerHTML =
-            contacts[e.rowIndex].email + "<br>" +
-            contacts[e.rowIndex].phone + "<br>" +
-            contacts[e.rowIndex].street + "<br>" +
-            contacts[e.rowIndex].city + contacts[e.rowIndex].state + contacts[e.rowIndex].zip
+
+        e.childNodes[3].innerHTML = "";
+
+        let emailElement = document.createElement("a");
+        emailElement.href = "";
+        emailElement.innerHTML = contacts[e.rowIndex].email + "<br>";
+        e.childNodes[3].appendChild(emailElement);
+
+        let phoneElement = document.createElement("p")
+        phoneElement.innerHTML = contacts[e.rowIndex].phone + "<br>";
+        e.childNodes[3].appendChild(phoneElement);
+
+        let addressElement = document.createElement("p");
+        addressElement.innerHTML = contacts[e.rowIndex].city + contacts[e.rowIndex].state + contacts[e.rowIndex].zip;
+        e.childNodes[3].appendChild(addressElement);
+
     }
 
     function clearSelection() {
