@@ -9,12 +9,12 @@
     <div id="contactHeader">
         Contacts
     </div>
-    <table>
-        <tr>
+    <table id="contactTable">
+        <tr onclick="showFullDetail(this)">
             <td>
-                Christian
+                <span class="dot"></span>Christian
             </td>
-            <td>
+            <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
@@ -22,7 +22,7 @@
             <td>
                 Rich
             </td>
-            <td>
+            <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
@@ -30,7 +30,7 @@
             <td>
                 Scott
             </td>
-            <td>
+            <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
@@ -38,7 +38,7 @@
             <td>
                 Danny
             </td>
-            <td>
+            <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
@@ -46,7 +46,7 @@
             <td>
                 Taka
             </td>
-            <td>
+            <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
@@ -54,7 +54,7 @@
             <td>
                 Tim
             </td>
-            <td>
+            <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
@@ -62,7 +62,7 @@
             <td>
                 Patrick
             </td>
-            <td>
+            <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
@@ -70,13 +70,13 @@
             <td>
                 Jacques
             </td>
-            <td>
+            <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
     </table>
     <div id="footer">
-        <select name="displayDetail" id="displayDetail">
+        <select name="displayDetail" id="displayDetail" onchange="updateContactDetails()">
             <option value="email">Email Address</option>
             <option value="phone">Phone Number</option>
         </select>
@@ -85,6 +85,18 @@
 </html>
 
 <script>
+    function updateContactDetails() {
+        let contactsElements = document.getElementsByClassName("contactDetail");
+        let selectedOption = document.getElementById("displayDetail").value;
+        for(var i=0; i < contactsElements.length; i++) {
+            selectedOption === "phone"?
+                contactsElements[i].innerHTML = contacts[i].phone:
+                contactsElements[i].innerHTML = contacts[i].email;
+        }
+    }
+
+
+
     var contacts = [
         {
             name: "Christian",
