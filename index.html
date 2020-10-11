@@ -93,6 +93,7 @@
 
 <script>
     function updateContactDetails() {
+        clearSelection();
         let contactsElements = document.getElementsByClassName("contactDetail");
         let selectedOption = document.getElementById("displayDetail").value;
         for(var i=0; i < contactsElements.length; i++) {
@@ -103,6 +104,17 @@
     }
 
     function showFullDetail(e) {
+        clearSelection();
+        e.classList.add("selected");
+        console.log(e.childNodes.forEach(child => console.log(child.innerHTML)));
+        e.childNodes[3].innerHTML =
+            contacts[e.rowIndex].email + "<br>" +
+            contacts[e.rowIndex].phone + "<br>" +
+            contacts[e.rowIndex].street + "<br>" +
+            contacts[e.rowIndex].city + contacts[e.rowIndex].state + contacts[e.rowIndex].zip
+    }
+
+    function clearSelection() {
         let rows = document.getElementsByTagName("tr");
         let selectedOption = document.getElementById("displayDetail").value;
         for(let i=0; i < rows.length; i++) {
@@ -113,15 +125,7 @@
                     rows[i].childNodes[3].innerHTML = contacts[i].email;
             }
         }
-        e.classList.add("selected");
-        console.log(e.childNodes.forEach(child => console.log(child.innerHTML)));
-        e.childNodes[3].innerHTML =
-            contacts[e.rowIndex].email + "<br>" +
-            contacts[e.rowIndex].phone + "<br>" +
-            contacts[e.rowIndex].street + "<br>" +
-            contacts[e.rowIndex].city + contacts[e.rowIndex].state + contacts[e.rowIndex].zip
     }
-
 
     var contacts = [
         {
