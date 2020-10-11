@@ -18,56 +18,63 @@
                 323-555-1234
             </td>
         </tr>
-        <tr>
+        <tr onclick="showFullDetail(this)">
             <td>
+                <span class="dot"></span>
                 Rich
             </td>
             <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
-        <tr>
+        <tr onclick="showFullDetail(this)">
             <td>
+                <span class="dot"></span>
                 Scott
             </td>
             <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
-        <tr>
+        <tr onclick="showFullDetail(this)">
             <td>
+                <span class="dot"></span>
                 Danny
             </td>
             <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
-        <tr>
+        <tr onclick="showFullDetail(this)">
             <td>
+                <span class="dot"></span>
                 Taka
             </td>
             <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
-        <tr>
+        <tr onclick="showFullDetail(this)">
             <td>
+                <span class="dot"></span>
                 Tim
             </td>
             <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
-        <tr>
+        <tr onclick="showFullDetail(this)">
             <td>
+                <span class="dot"></span>
                 Patrick
             </td>
             <td class="contactDetail">
                 323-555-1234
             </td>
         </tr>
-        <tr>
+        <tr onclick="showFullDetail(this)">
             <td>
+                <span class="dot"></span>
                 Jacques
             </td>
             <td class="contactDetail">
@@ -77,8 +84,8 @@
     </table>
     <div id="footer">
         <select name="displayDetail" id="displayDetail" onchange="updateContactDetails()">
-            <option value="email">Email Address</option>
             <option value="phone">Phone Number</option>
+            <option value="email">Email Address</option>
         </select>
     </div>
 </body>
@@ -95,6 +102,25 @@
         }
     }
 
+    function showFullDetail(e) {
+        let rows = document.getElementsByTagName("tr");
+        let selectedOption = document.getElementById("displayDetail").value;
+        for(let i=0; i < rows.length; i++) {
+            if (rows[i].classList.contains("selected")) {
+                rows[i].classList.remove("selected");
+                selectedOption === "phone"?
+                    rows[i].childNodes[3].innerHTML = contacts[i].phone:
+                    rows[i].childNodes[3].innerHTML = contacts[i].email;
+            }
+        }
+        e.classList.add("selected");
+        console.log(e.childNodes.forEach(child => console.log(child.innerHTML)));
+        e.childNodes[3].innerHTML =
+            contacts[e.rowIndex].email + "<br>" +
+            contacts[e.rowIndex].phone + "<br>" +
+            contacts[e.rowIndex].street + "<br>" +
+            contacts[e.rowIndex].city + contacts[e.rowIndex].state + contacts[e.rowIndex].zip
+    }
 
 
     var contacts = [

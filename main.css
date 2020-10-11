@@ -1,6 +1,7 @@
 table {
     border-collapse: collapse;
     width: 100%;
+    cursor: pointer;
 }
 
 tr {
@@ -35,6 +36,10 @@ select {
     background-color: #00fe1c;
     border-radius: 50%;
     display: inline-block;
+}
+
+tr.selected{
+    background-color: #484848;
 }
 
 #contactHeader {
