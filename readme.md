@@ -12,3 +12,9 @@ Bonuses: Keep it simple, don't overuse JavaScript.  Prioritize modern browsers -
 * [Contact List PSD](https://github.com/14four/skills-assessment/blob/master/contactListUpdated.psd?raw=true) (right click and save)
 
 ![Screen](https://github.com/14four/skills-assessment/raw/master/contactListUpdated.jpg)
+
+###*Notes
+
+The only piece of the assessment that I did not manage was mirroring the formatting for the contact detail breakout; I wasn't sure how to best replicate what is seen in the image, where the details spill out in the second column of the contact table without removing the rest of the elements in that column or resizing the first (name) column. Maybe it would have been easier if I hadn't used an html table...?
+
+Regardless, I think I was able to manage a functional replica of the rest of the page without overusing javascript or keeping the site from remaining relatively simple.
